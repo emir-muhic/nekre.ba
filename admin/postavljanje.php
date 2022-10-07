@@ -41,90 +41,94 @@ $imgW = imagecreatefrompng($sourceW);
 imagecopy($imgS, $imgW, $posX, $posY, 0, 0, imagesx($imgW), imagesY($imgW));
 imagejpeg($imgS, $target, $quality); */
 
+// Upload images
 
-$filename2 = $_FILES["slika1"]["name"];
-$tempname = $_FILES["slika1"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename2;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename2 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename2);
 
-$filename3 = $_FILES["slika2"]["name"];
-$tempname = $_FILES["slika2"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename3;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename3 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename3);
 
-$filename4 = $_FILES["slika3"]["name"];
-$tempname = $_FILES["slika3"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename4;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename4 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename4);
 
-$filename5 = $_FILES["slika4"]["name"];
-$tempname = $_FILES["slika4"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename5;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename5 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename5);
+// $filename2 = $_FILES["slika1"]["name"];
+// $tempname = $_FILES["slika1"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename2;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename2 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename2);
 
-$filename6 = $_FILES["slika5"]["name"];
-$tempname = $_FILES["slika5"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename6;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename6 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename6);
+// $filename3 = $_FILES["slika2"]["name"];
+// $tempname = $_FILES["slika2"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename3;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename3 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename3);
 
-$filename7 = $_FILES["slika6"]["name"];
-$tempname = $_FILES["slika6"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename7;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename7 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename7);
+// $filename4 = $_FILES["slika3"]["name"];
+// $tempname = $_FILES["slika3"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename4;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename4 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename4);
 
-$filename8 = $_FILES["slika7"]["name"];
-$tempname = $_FILES["slika7"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename8;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename8 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename8);
+// $filename5 = $_FILES["slika4"]["name"];
+// $tempname = $_FILES["slika4"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename5;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename5 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename5);
 
-$filename9 = $_FILES["slika8"]["name"];
-$tempname = $_FILES["slika8"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename9;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename9 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename9);
+// $filename6 = $_FILES["slika5"]["name"];
+// $tempname = $_FILES["slika5"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename6;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename6 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename6);
 
-$filename10 = $_FILES["slika9"]["name"];
-$tempname = $_FILES["slika9"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename10;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename10 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename10);
+// $filename7 = $_FILES["slika6"]["name"];
+// $tempname = $_FILES["slika6"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename7;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename7 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename7);
 
-$filename11 = $_FILES["slika10"]["name"];
-$tempname = $_FILES["slika10"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename11;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename11 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename11);
+// $filename8 = $_FILES["slika7"]["name"];
+// $tempname = $_FILES["slika7"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename8;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename8 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename8);
 
-$filename12 = $_FILES["slika11"]["name"];
-$tempname = $_FILES["slika11"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename12;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename12 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename12);
+// $filename9 = $_FILES["slika8"]["name"];
+// $tempname = $_FILES["slika8"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename9;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename9 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename9);
 
-$filename13 = $_FILES["slika12"]["name"];
-$tempname = $_FILES["slika12"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename13;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename13 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename13);
+// $filename10 = $_FILES["slika9"]["name"];
+// $tempname = $_FILES["slika9"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename10;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename10 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename10);
 
-$filename14 = $_FILES["slika13"]["name"];
-$tempname = $_FILES["slika13"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename14;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename14 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename14);
+// $filename11 = $_FILES["slika10"]["name"];
+// $tempname = $_FILES["slika10"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename11;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename11 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename11);
 
-$filename15 = $_FILES["slika14"]["name"];
-$tempname = $_FILES["slika14"]["tmp_name"];
-$lokacija_slike = $sifrirani_folder . "/" . $filename15;
-move_uploaded_file($tempname, $lokacija_slike);
-$filename15 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename15);
+// $filename12 = $_FILES["slika11"]["name"];
+// $tempname = $_FILES["slika11"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename12;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename12 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename12);
+
+// $filename13 = $_FILES["slika12"]["name"];
+// $tempname = $_FILES["slika12"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename13;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename13 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename13);
+
+// $filename14 = $_FILES["slika13"]["name"];
+// $tempname = $_FILES["slika13"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename14;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename14 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename14);
+
+// $filename15 = $_FILES["slika14"]["name"];
+// $tempname = $_FILES["slika14"]["tmp_name"];
+// $lokacija_slike = $sifrirani_folder . "/" . $filename15;
+// move_uploaded_file($tempname, $lokacija_slike);
+// $filename15 = mysqli_real_escape_string($conn, "fotografije/" . $sifra . "/" . $filename15);
 
 
 $naslov = mysqli_real_escape_string($conn, $naslov);
@@ -141,12 +145,20 @@ $latitude = mysqli_real_escape_string($conn, $latitude);
 $longitude = mysqli_real_escape_string($conn, $longitude);
 $izdvoji_nekretninu = mysqli_real_escape_string($conn, $izdvoji_nekretninu);
 
-$query = "INSERT INTO nekretnine(naslov, opis, cijena, sifra, povrsina, vrsta, kategorija, naselje, grad, godina_izgradnje, latitude, longitude, featured_image, slika1, slika2, slika3, slika4, slika5, slika6, slika7, slika8, slika9, slika10, slika11, slika12, slika13, slika14, izdvojeno)VALUES('$naslov', '$opis', '$cijena', '$sifra', '$povrsina', '$vrsta', '$kategorija', '$naselje', '$grad', '$godina', '$latitude', '$longitude', '$filename1', '$filename2', '$filename3', '$filename4', '$filename5', '$filename6', '$filename7', '$filename8', '$filename9', '$filename10', '$filename11', '$filename12', '$filename13', '$filename14', '$filename15', '$izdvoji_nekretninu')";
+$query = "INSERT INTO nekretnine(naslov, opis, cijena, sifra, povrsina, vrsta, kategorija, naselje, grad, godina_izgradnje, latitude, longitude, featured_image, izdvojeno)VALUES('$naslov', '$opis', '$cijena', '$sifra', '$povrsina', '$vrsta', '$kategorija', '$naselje', '$grad', '$godina', '$latitude', '$longitude', '$filename1', '$izdvoji_nekretninu')";
 $result = mysqli_query($conn, $query);
+
+$countfiles = count($_FILES['slika']['name']);
+for($i=1;$i<$countfiles;$i++){
+    $filename[$i] = $_FILES['slika']['name'][$i];
+    move_uploaded_file($_FILES['slika']['tmp_name'][$i], $sifrirani_folder . "/" . $filename[$i]);
+    $query = "UPDATE nekretnine SET slika" . [$i] . " = '$filename[$i]' WHERE sifra = $sifra";
+    $result = mysqli_query($conn, $query);
+}
 
 if(!$result){
     die("Greška prilikom ubacivanja u bazu podataka!!!");
 }
 
 echo "Upiješno postavljeno!!!";
-header("Location: index.php");
+//header("Location: index.php");

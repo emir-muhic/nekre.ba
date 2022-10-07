@@ -3,7 +3,7 @@
 $db['host'] = "localhost";
 $db['username'] = "root";
 $db['password'] = "";
-$db['name'] = "nekre.ba";
+$db['name'] = "nekretnine";
 
 foreach($db as $item=>$key){
     define(strtoupper($item), $key);

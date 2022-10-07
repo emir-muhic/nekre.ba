@@ -3,14 +3,15 @@
 
 
 <?php
-$queryy = "SELECT * FROM nekretnine";
+$queryy = "SELECT * FROM objave WHERE cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
+// WHERE cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'
 $arr = array();
 $arr2 = array();
 if(isset($_GET['stan'])){
     array_push($arr, 'stan');
 }
 if(isset($_GET['kuca'])){
-    array_push($arr, 'kuca');
+    array_push($arr, 'Kuća');
 }
 if(isset($_GET['zemljiste'])){
     array_push($arr, 'zemljiste');
@@ -19,7 +20,7 @@ if(isset($_GET['garaza'])){
     array_push($arr, 'garaza');
 }
 if(isset($_GET['poslovniprostor'])){
-    array_push($arr, 'poslovniprostor');
+    array_push($arr, 'Poslovni prostor');
 }
 if(isset($_GET['vikendica'])){
     array_push($arr, 'vikendica');
@@ -35,19 +36,21 @@ if(isset($_GET['iznajmljivanje'])){
 }
 
 if(count($arr) > 0 && count($arr2) == 0){
-    $queryy .= " WHERE ";
+    $queryy .= " AND ";
     for($i=0; $i<count($arr); $i++){
         $queryy .= "vrsta ='" . $arr[$i] . "' OR ";
     }
     $queryy = substr($queryy,0,-3);
+    //$queryy .= " AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
 } else if(count($arr) == 0 && count($arr2) > 0){
-    $queryy .= " WHERE ";
+    $queryy .= " AND ";
     for($i=0; $i<count($arr2); $i++){
         $queryy .= "kategorija ='" . $arr2[$i] . "' OR ";
     }
     $queryy = substr($queryy,0,-3);
+    //$queryy .= " AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
 } else if(count($arr) > 0 && count($arr2) > 0){
-    $queryy .= " WHERE (";
+    $queryy .= " AND (";
     for($i=0; $i<count($arr); $i++){
         $queryy .= "vrsta ='" . $arr[$i] . "' OR ";
     }
@@ -58,6 +61,7 @@ if(count($arr) > 0 && count($arr2) == 0){
     }
     $queryy = substr($queryy,0,-3);
     $queryy .= ")";
+    //$queryy .= " AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
 }
 
 if(isset($_GET['homesearch'])){
@@ -65,20 +69,20 @@ if(isset($_GET['homesearch'])){
     $kategorija = $_GET['kategorija'];
 
     if($_GET['vrsta'] != 'Vrsta nekretnine' && $_GET['kategorija'] != 'Kategorija'){
-        $queryy = "SELECT * FROM nekretnine WHERE vrsta='$vrsta' AND kategorija='$kategorija'";
+        $queryy = "SELECT * FROM objave WHERE vrsta='$vrsta' AND kategorija='$kategorija' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
     } else if($_GET['vrsta'] == 'Vrsta nekretnine' && $_GET['kategorija'] != 'Kategorija'){
-        $queryy = "SELECT * FROM nekretnine WHERE kategorija='$kategorija'";
+        $queryy = "SELECT * FROM objave WHERE kategorija='$kategorija' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
     } else if($_GET['vrsta'] != 'Vrsta nekretnine' && $_GET['kategorija'] == 'Kategorija'){
-        $queryy = "SELECT * FROM nekretnine WHERE vrsta='$vrsta'";
+        $queryy = "SELECT * FROM objave WHERE vrsta='$vrsta' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
     }
 }
 
 if(isset($_GET['search'])){
     $rijec = $_GET['searchtext'];
-    $queryy = "SELECT * FROM nekretnine WHERE naslov LIKE '%$rijec%'";
+    $queryy = "SELECT * FROM objave WHERE naslov LIKE '%$rijec%' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
 }
 
-echo $_GET['cijena'];
+//echo $_GET['cijena'];
 
 
 ?>
@@ -96,7 +100,7 @@ echo $_GET['cijena'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Place favicon.png in the root directory -->
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
     <!-- Font Icons css -->
     <link rel="stylesheet" href="../css/font-icons.css">
     <!-- plugins css -->
@@ -407,7 +411,7 @@ echo $_GET['cijena'];
                                         </div>
                                     </div>
                                     <?php
-
+                                
                                     $result = mysqli_query($conn, $queryy);
 
                                     
@@ -473,7 +477,7 @@ echo $_GET['cijena'];
                                     </div>
                                     <?php
 
-                                    $query = "SELECT * FROM nekretnine ORDER BY id DESC";
+                                    $query = "SELECT * FROM objave WHERE cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO' ORDER BY id DESC";
                                     $result = mysqli_query($conn, $query);
                                     $number_of_estate = mysqli_num_rows($result);
 
@@ -557,7 +561,7 @@ echo $_GET['cijena'];
                                             <span class="checkmark"></span>
                                         </label>
                                         <?php
-                                        $query = "SELECT * FROM nekretnine WHERE vrsta='stan'";
+                                        $query = "SELECT * FROM objave WHERE vrsta='stan' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
                                         $result = mysqli_query($conn, $query);
                                         $broj = mysqli_num_rows($result);
                                         
@@ -571,7 +575,7 @@ echo $_GET['cijena'];
                                         <span class="checkmark"></span>
                                     </label>
                                     <?php
-                                    $query = "SELECT * FROM nekretnine WHERE vrsta='kuca'";
+                                    $query = "SELECT * FROM objave WHERE vrsta='kuca' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
                                     $result = mysqli_query($conn, $query);
                                     $broj = mysqli_num_rows($result);
                                     
@@ -584,7 +588,7 @@ echo $_GET['cijena'];
                                         <span class="checkmark"></span>
                                     </label>
                                     <?php
-                                    $query = "SELECT * FROM nekretnine WHERE vrsta='zemljiste'";
+                                    $query = "SELECT * FROM objave WHERE vrsta='zemljiste' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
                                     $result = mysqli_query($conn, $query);
                                     $broj = mysqli_num_rows($result);
                                     
@@ -597,7 +601,7 @@ echo $_GET['cijena'];
                                         <span class="checkmark"></span>
                                     </label>
                                     <?php
-                                    $query = "SELECT * FROM nekretnine WHERE vrsta='garaza'";
+                                    $query = "SELECT * FROM objave WHERE vrsta='garaza' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
                                     $result = mysqli_query($conn, $query);
                                     $broj = mysqli_num_rows($result);
                                     
@@ -610,7 +614,7 @@ echo $_GET['cijena'];
                                         <span class="checkmark"></span>
                                     </label>
                                     <?php
-                                    $query = "SELECT * FROM nekretnine WHERE vrsta='poslovniprostor'";
+                                    $query = "SELECT * FROM objave WHERE vrsta='Poslovni prostor' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
                                     $result = mysqli_query($conn, $query);
                                     $broj = mysqli_num_rows($result);
                                     
@@ -623,7 +627,7 @@ echo $_GET['cijena'];
                                         <span class="checkmark"></span>
                                     </label>
                                     <?php
-                                    $query = "SELECT * FROM nekretnine WHERE vrsta='vikendica'";
+                                    $query = "SELECT * FROM objave WHERE vrsta='vikendica' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
                                     $result = mysqli_query($conn, $query);
                                     $broj = mysqli_num_rows($result);
                                     
@@ -636,7 +640,7 @@ echo $_GET['cijena'];
                                         <span class="checkmark"></span>
                                     </label>
                                     <?php
-                                    $query = "SELECT * FROM nekretnine WHERE vrsta='parkingmjesto'";
+                                    $query = "SELECT * FROM objave WHERE vrsta='parkingmjesto'";
                                     $result = mysqli_query($conn, $query);
                                     $broj = mysqli_num_rows($result);
                                     
@@ -665,7 +669,7 @@ echo $_GET['cijena'];
                                         <span class="checkmark"></span>
                                     </label>
                                     <?php
-                                    $query = "SELECT * FROM nekretnine WHERE kategorija='Prodaja'";
+                                    $query = "SELECT * FROM objave WHERE kategorija='Prodaja' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
                                     $result = mysqli_query($conn, $query);
                                     $broj = mysqli_num_rows($result);
                                     
@@ -678,7 +682,7 @@ echo $_GET['cijena'];
                                         <span class="checkmark"></span>
                                     </label>
                                     <?php
-                                    $query = "SELECT * FROM nekretnine WHERE kategorija='Iznajmljivanje'";
+                                    $query = "SELECT * FROM objave WHERE kategorija='Iznajmljivanje' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
                                     $result = mysqli_query($conn, $query);
                                     $broj = mysqli_num_rows($result);
                                     
@@ -784,11 +788,11 @@ echo $_GET['cijena'];
                             <h4 class="footer-title">Nekretnine</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="order-tracking.html">Stanovi</a></li>
-                                    <li><a href="wishlist.html">Kuće</a></li>
-                                    <li><a href="login.html">Garaže</a></li>
-                                    <li><a href="account.html">Zemljišta</a></li>
-                                    <li><a href="about.html">Vikendice</a></li>
+                                    <li><a href="#">Stanovi</a></li>
+                                    <li><a href="#">Kuće</a></li>
+                                    <li><a href="#">Garaže</a></li>
+                                    <li><a href="#">Zemljišta</a></li>
+                                    <li><a href="#">Vikendice</a></li>
                                     <li><a href="about.html">Parking mjesta</a></li>
                                 </ul>
                             </div>
@@ -799,10 +803,10 @@ echo $_GET['cijena'];
                             <h4 class="footer-title">Administracija</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="login.html">Prijava</a></li>
-                                    <li><a href="account.html">Postavi nekretinu</a></li>
-                                    <li><a href="account.html">Uredi nekretninu</a></li>
-                                    <li><a href="account.html">Pogledaj statistike</a></li>
+                                    <li><a href="#">Prijava</a></li>
+                                    <li><a href="#">Postavi nekretinu</a></li>
+                                    <li><a href="#">Uredi nekretninu</a></li>
+                                    <li><a href="#">Pogledaj statistike</a></li>
                                 </ul>
                             </div>
                         </div>

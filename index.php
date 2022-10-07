@@ -109,9 +109,8 @@
                                         <li><a href="o-nama/">O nama</a></li>
                                         <li><a href="nekretnine/">Nekretnine</a></li>
                                         <li><a href="faq/">FAQ</a></li>
-                                        <li><a href="kontakt/">Kontakt</a></li>
                                         <li class="special-link">
-                                            <a href="admin/index.php">Admin</a>
+                                            <a href="kontakt/">Kontakt</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -293,7 +292,7 @@
                                         <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Agencija za nekretnine</h6>
                                         <h1 class="slide-title animated ">Želite da prodate, iznajmite ili kupite nekretinu?</h1>
                                         <div class="btn-wrapper animated">
-                                            <a href="kontakt" class="theme-btn-1 btn btn-effect-1">Kontaktirajte nas</a>
+                                            <a href="kontakt/" class="theme-btn-1 btn btn-effect-1">Kontaktirajte nas</a>
                                         </div>
                                     </div>
                                 </div>
@@ -326,7 +325,7 @@
                                                 <option value="kuca">Kuća</option>
                                                 <option value="zemljiste">Zemljište</option>
                                                 <option value="garaza">Garaža</option>
-                                                <option value="poslovniprostor">Poslovni prostor</option>
+                                                <option value="poslovni prostor">Poslovni prostor</option>
                                                 <option value="vikendica">Vikendica</option>
                                                 <option value="parkingmjesto">Parking mjesto</option>
                                             </select>
@@ -414,11 +413,11 @@
                             <img src="img/icons/icon-img/21.png" alt="#">
                         </div>
                         <div class="ltn__feature-info">
-                            <h3><a href="service-details.html">Prodaja</a></h3>
+                            <h3><a href="nekretnine/">Prodaja</a></h3>
                             <p>Agencija "Nekre" Vam nudi širok asortiman
 stanova, kuća, zemljišta, poslovnih prostora,
 garaža i parking mjesta.</p>
-                            <a class="ltn__service-btn" href="service-details.html">Pogledaj nekretnine <i class="flaticon-right-arrow"></i></a>
+                            <a class="ltn__service-btn" href="nekretnine/">Pogledaj nekretnine <i class="flaticon-right-arrow"></i></a>
                         </div>
                     </div>
                 </div>
@@ -429,11 +428,11 @@ garaža i parking mjesta.</p>
                             <img src="img/icons/icon-img/22.png" alt="#">
                         </div>
                         <div class="ltn__feature-info">
-                            <h3><a href="service-details.html">Iznajmljivanje</a></h3>
+                            <h3><a href="nekretnine/">Iznajmljivanje</a></h3>
                             <p>Agencija "Nekre" Vam nudi širok asortiman
 stanova, kuća, zemljišta, poslovnih prostora,
 garaža i parking mjesta.</p>
-                            <a class="ltn__service-btn" href="service-details.html">Pogledaj nekretnine <i class="flaticon-right-arrow"></i></a>
+                            <a class="ltn__service-btn" href="nekretnine/">Pogledaj nekretnine <i class="flaticon-right-arrow"></i></a>
                         </div>
                     </div>
                 </div>
@@ -456,7 +455,8 @@ garaža i parking mjesta.</p>
             <div class="row ltn__product-slider-item-three-active--- slick-arrow-1">
                 <?php
 
-                $query = "SELECT * FROM nekretnine ORDER BY id DESC";
+                $query = "SELECT * FROM objave WHERE cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO' ORDER BY id DESC LIMIT 6";
+                //$query = "SELECT * FROM objave WHERE cijena != 'IZNAJMLJENO' ORDER BY id DESC LIMIT 6";
                 $result = mysqli_query($conn, $query);
 
                 while($row = mysqli_fetch_assoc($result)){ ?>
@@ -489,6 +489,14 @@ garaža i parking mjesta.</p>
                             <ul class="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
                                 <li>Šifra: <span><?php echo $row['sifra']; ?> </span></li>
                                 <li>Površina: <span><?php echo $row['povrsina']; ?> m<sup>2</sup></span></li>
+
+                                <!-- <li>Broj soba: <span>3</span></li> -->
+                                <!-- <li>Sprat: <span>3</span></li>
+
+                                <li>Lift: <span>&#x2713;</span></li>
+                                <li>Parking: <span>&#x2717;</span></li>
+                                <li>Balkon: <span>&#x2717;</span></li> -->
+                                
                             </ul>
                         </div>
                         <div class="product-info-bottom">
@@ -501,6 +509,9 @@ garaža i parking mjesta.</p>
                 <?php } ?>
                 <!--  -->
             </div>
+            <div class="btn-wrapper animated text-center">
+                <a href="nekretnine/" class="theme-btn-1 btn btn-effect-1 text-center" tabindex="0">Pogledaj sve nekretnine</a>
+            </div>
         </div>
     </div>
     <!-- PRODUCT SLIDER AREA END -->
@@ -512,13 +523,13 @@ garaža i parking mjesta.</p>
                 <div class="col-lg-12">
                     <div class="section-title-area ltn__section-title-2--- text-center">
                         <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Specijalno</h6>
-                        <h1 class="section-title">Izdvijene nekretnine</h1>
+                        <h1 class="section-title">Izdvojene nekretnine</h1>
                     </div>
                 </div>
             </div>
             <div class="row ltn__product-slider-item-three-active slick-arrow-1">
                 <?php
-                $query = "SELECT * FROM nekretnine WHERE izdvojeno = 'Da'";
+                $query = "SELECT * FROM objave WHERE izdvojeno = 'Da'";
                 $result = mysqli_query($conn, $query);
 
                 while($row = mysqli_fetch_assoc($result)){ ?>
@@ -547,11 +558,8 @@ garaža i parking mjesta.</p>
                                     <span><?php echo toPrice($row['cijena']); ?><label></label></span>
                                 </div>
                                 <h2 class="product-title"><a href="nekretnina/?post=<?php echo $row['sifra']; ?>"><?php echo $row['naslov']; ?></a></h2>
-                                <div class="product-description">
-                                    <p>Beautiful Huge 1 Family House In Heart Of <br>
-                                        Westbury. Newly Renovated With New Wood</p>
-                                </div>
-                                <ul class="ltn__list-item-2 ltn__list-item-2-before">
+
+                                <!-- <ul class="ltn__list-item-2 ltn__list-item-2-before">
                                     <li><span>3 <i class="flaticon-bed"></i></span>
                                         Bedrooms
                                     </li>
@@ -561,7 +569,7 @@ garaža i parking mjesta.</p>
                                     <li><span>3450 <i class="flaticon-square-shape-design-interface-tool-symbol"></i></span>
                                         square Ft
                                     </li>
-                                </ul>
+                                </ul> -->
                             </div>
                             <div class="product-info-bottom">
                                 <div class="real-estate-agent">
@@ -616,8 +624,8 @@ garaža i parking mjesta.</p>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title-area ltn__section-title-2--- text-center---">
-                        <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Naša ponuda</h6>
-                        <h1 class="section-title">Dostupne nekretnine</h1>
+                        <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color text-center">Naša ponuda</h6>
+                        <h1 class="section-title text-center">Dostupne nekretnine</h1>
                     </div>
                 </div>
             </div>
@@ -635,7 +643,7 @@ garaža i parking mjesta.</p>
                             </ul>
                             <?php
                             
-                            $query = "SELECT * FROM nekretnine";
+                            $query = "SELECT * FROM objave WHERE cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO' ORDER BY id DESC";
                             $result = mysqli_query($conn, $query);
 
                             while($row = mysqli_fetch_assoc($result)){ ?>
@@ -770,11 +778,11 @@ garaža i parking mjesta.</p>
                             <h4 class="footer-title">Nekretnine</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="order-tracking.html">Stanovi</a></li>
-                                    <li><a href="wishlist.html">Kuće</a></li>
-                                    <li><a href="login.html">Garaže</a></li>
-                                    <li><a href="account.html">Zemljišta</a></li>
-                                    <li><a href="about.html">Vikendice</a></li>
+                                    <li><a href="#">Stanovi</a></li>
+                                    <li><a href="#">Kuće</a></li>
+                                    <li><a href="#">Garaže</a></li>
+                                    <li><a href="#">Zemljišta</a></li>
+                                    <li><a href="#">Vikendice</a></li>
                                     <li><a href="about.html">Parking mjesta</a></li>
                                 </ul>
                             </div>
@@ -785,10 +793,10 @@ garaža i parking mjesta.</p>
                             <h4 class="footer-title">Administracija</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="login.html">Prijava</a></li>
-                                    <li><a href="account.html">Postavi nekretinu</a></li>
-                                    <li><a href="account.html">Uredi nekretninu</a></li>
-                                    <li><a href="account.html">Pogledaj statistike</a></li>
+                                    <li><a href="#">Prijava</a></li>
+                                    <li><a href="#">Postavi nekretinu</a></li>
+                                    <li><a href="#">Uredi nekretninu</a></li>
+                                    <li><a href="#">Pogledaj statistike</a></li>
                                 </ul>
                             </div>
                         </div>

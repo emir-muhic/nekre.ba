@@ -534,11 +534,11 @@
                             <h4 class="footer-title">Nekretnine</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="order-tracking.html">Stanovi</a></li>
-                                    <li><a href="wishlist.html">Kuće</a></li>
-                                    <li><a href="login.html">Garaže</a></li>
-                                    <li><a href="account.html">Zemljišta</a></li>
-                                    <li><a href="about.html">Vikendice</a></li>
+                                    <li><a href="#">Stanovi</a></li>
+                                    <li><a href="#">Kuće</a></li>
+                                    <li><a href="#">Garaže</a></li>
+                                    <li><a href="#">Zemljišta</a></li>
+                                    <li><a href="#">Vikendice</a></li>
                                     <li><a href="about.html">Parking mjesta</a></li>
                                 </ul>
                             </div>
@@ -549,10 +549,10 @@
                             <h4 class="footer-title">Administracija</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="login.html">Prijava</a></li>
-                                    <li><a href="account.html">Postavi nekretinu</a></li>
-                                    <li><a href="account.html">Uredi nekretninu</a></li>
-                                    <li><a href="account.html">Pogledaj statistike</a></li>
+                                    <li><a href="#">Prijava</a></li>
+                                    <li><a href="#">Postavi nekretinu</a></li>
+                                    <li><a href="#">Uredi nekretninu</a></li>
+                                    <li><a href="#">Pogledaj statistike</a></li>
                                 </ul>
                             </div>
                         </div>

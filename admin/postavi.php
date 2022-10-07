@@ -213,75 +213,9 @@ if(!isset($_SESSION['username'])){
                     <label for="formFile" class="form-label">Odaberite izdvojenu sliku nekretnine</label>
                     <input class="form-control" type="file" name="fetured_image">
                 </div>
-                <div class="form-row">
-                    <div class="mb-3 mr-5">
-                        <label for="formFileLg" class="form-label">Odaberite sliku #1</label>
-                        <input class="form-control form-control-lg" name="slika1" type="file">
-                    </div>
-                    <div>
-                        <label for="formFileLg" class="form-label">Odaberite sliku #2</label>
-                        <input class="form-control form-control-lg" name="slika2" type="file">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="mb-3 mr-5">
-                        <label for="formFileLg" class="form-label">Odaberite sliku #3</label>
-                        <input class="form-control form-control-lg" name="slika3" type="file">
-                    </div>
-                    <div>
-                        <label for="formFileLg" class="form-label">Odaberite sliku #4</label>
-                        <input class="form-control form-control-lg" name="slika4" type="file">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="mb-3 mr-5">
-                        <label for="formFileLg" class="form-label">Odaberite sliku #5</label>
-                        <input class="form-control form-control-lg" name="slika5" type="file">
-                    </div>
-                    <div>
-                        <label for="formFileLg" class="form-label">Odaberite sliku #6</label>
-                        <input class="form-control form-control-lg" name="slika6" type="file">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="mb-3 mr-5">
-                        <label for="formFileLg" class="form-label">Odaberite sliku #7</label>
-                        <input class="form-control form-control-lg" name="slika7" type="file">
-                    </div>
-                    <div>
-                        <label for="formFileLg" class="form-label">Odaberite sliku #8</label>
-                        <input class="form-control form-control-lg" name="slika8" type="file">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="mb-3 mr-5">
-                        <label for="formFileLg" class="form-label">Odaberite sliku #9</label>
-                        <input class="form-control form-control-lg" name="slika9" type="file">
-                    </div>
-                    <div>
-                        <label for="formFileLg" class="form-label">Odaberite sliku #10</label>
-                        <input class="form-control form-control-lg" name="slika10" type="file">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="mb-3 mr-5">
-                        <label for="formFileLg" class="form-label">Odaberite sliku #11</label>
-                        <input class="form-control form-control-lg" name="slika11" type="file">
-                    </div>
-                    <div>
-                        <label for="formFileLg" class="form-label">Odaberite sliku #12</label>
-                        <input class="form-control form-control-lg" name="slika12" type="file">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="mb-3 mr-5">
-                        <label for="formFileLg" class="form-label">Odaberite sliku #13</label>
-                        <input class="form-control form-control-lg" name="slika13" type="file">
-                    </div>
-                    <div>
-                        <label for="formFileLg" class="form-label">Odaberite sliku #14</label>
-                        <input class="form-control form-control-lg" name="slika14" type="file">
-                    </div>
+                <div class="mb-3 mr-5">
+                    <label for="formFileLg" class="form-label">Odaberite sliku #1</label>
+                    <input class="form-control form-control-lg" name="slika[]" type="file" multiple>
                 </div>
                 <div class="form-group mb-4">
                     <label for="exampleFormControlSelect1">Izdvoji nekretninu</label>

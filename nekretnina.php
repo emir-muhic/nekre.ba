@@ -1,25 +1,37 @@
+<?php include "php/db.php" ?>
+<?php include "php/function.php" ?>
+<?php
+
+$sifra = $_GET['post'];
+
+$query = "SELECT * FROM objave WHERE sifra='$sifra'";
+$result = mysqli_query($conn, $query);
+
+$data = mysqli_fetch_assoc($result);
+
+?>
 
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="bs">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Quarter - Real Estate HTML Template</title>
+    <title>Nekretnina <?php echo $sifra; ?> - Agencija za nekretnine "Nekre" - Tuzla</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Place favicon.png in the root directory -->
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
     <!-- Font Icons css -->
-    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="../css/font-icons.css">
     <!-- plugins css -->
-    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="../css/plugins.css">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Responsive css -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body>
@@ -41,8 +53,8 @@
                     <div class="col-md-7">
                         <div class="ltn__top-bar-menu">
                             <ul>
-                                <li><a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you"><i class="icon-mail"></i> info@webmail.com</a></li>
-                                <li><a href="locations.html"><i class="icon-placeholder"></i> 15/A, Nest Tower, NYC</a></li>
+                                <li><a href="mailto:sladjan@nekre.ba"><i class="icon-mail"></i> sladjan@nekre.ba</a></li>
+                                <li><a href="#"><i class="icon-placeholder"></i> Slatina br.6, Tuzla</a></li>
                             </ul>
                         </div>
                     </div>
@@ -50,39 +62,20 @@
                         <div class="top-bar-right text-end">
                             <div class="ltn__top-bar-menu">
                                 <ul>
-                                    <li class="d-none">
-                                        <!-- ltn__language-menu -->
-                                        <div class="ltn__drop-menu ltn__currency-menu ltn__language-menu">
-                                            <ul>
-                                                <li><a href="#" class="dropdown-toggle"><span class="active-currency">English</span></a>
-                                                    <ul>
-                                                        <li><a href="#">Arabic</a></li>
-                                                        <li><a href="#">Bengali</a></li>
-                                                        <li><a href="#">Chinese</a></li>
-                                                        <li><a href="#">English</a></li>
-                                                        <li><a href="#">French</a></li>
-                                                        <li><a href="#">Hindi</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
                                     <li>
                                         <!-- ltn__social-media -->
                                         <div class="ltn__social-media">
                                             <ul>
-                                                <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                                
-                                                <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
+                                                <li><a href="https://www.facebook.com/nekre.ba/" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="https://www.youtube.com/channel/UCoP8Inu_mE0F4oQCq1rOkIw" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                                                <li><a href="https://www.instagram.com/agencija_nekre/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li>
                                         <!-- header-top-btn -->
                                         <div class="header-top-btn">
-                                            <a href="add-listing.html">Add Listing</a>
+                                            <a href="../admin/index.php">Admin</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -101,7 +94,7 @@
                     <div class="col">
                         <div class="site-logo-wrap">
                             <div class="site-logo">
-                                <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+                                <a href="../"><img src="../img/logo-2.png" alt="Logo"></a>
                             </div>
                             <div class="get-support clearfix d-none">
                                 <div class="get-support-icon">
@@ -119,179 +112,17 @@
                             <nav>
                                 <div class="ltn__main-menu">
                                     <ul>
-                                        <li class="menu-icon"><a href="#">Home</a>
-                                            <ul class="sub-menu menu-pages-img-show">
-                                                <li>
-                                                    <a href="index.html">Home Style 01</a>
-                                                    <img src="img/home-demos/home-1.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-2.html">Home Style 02</a>
-                                                    <img src="img/home-demos/home-2.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-3.html">Home Style 03</a>
-                                                    <img src="img/home-demos/home-3.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-4.html">Home Style 04</a>
-                                                    <img src="img/home-demos/home-4.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-5.html">Home Style 05 <span class="menu-item-badge">video</span></a>
-                                                    <img src="img/home-demos/home-5.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-6.html">Home Style 06</a>
-                                                    <img src="img/home-demos/home-6.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-7.html">Home Style 07</a>
-                                                    <img src="img/home-demos/home-7.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-8.html">Home Style 08</a>
-                                                    <img src="img/home-demos/home-8.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-9.html">Home Style 09</a>
-                                                    <img src="img/home-demos/home-9.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-10.html">Home Style 10 <span class="menu-item-badge">Map</span></a>
-                                                    <img src="img/home-demos/home-10.jpg" alt="#">
-                                                </li>
-                                                <li>
-                                                    <a href="index-11.html">Home Style 11</a>
-                                                    <img src="img/home-demos/home-11.jpg" alt="#">
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-icon"><a href="#">About</a>
-                                            <ul>
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="service.html">Services</a></li>
-                                                <li><a href="service-details.html">Service Details</a></li>
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                                <li><a href="portfolio-2.html">Portfolio - 02</a></li>
-                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
-                                                <li><a href="locations.html">Google Map Locations</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-icon"><a href="#">Shop</a>
-                                            <ul>
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="shop-grid.html">Shop Grid</a></li>
-                                                <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
-                                                <li><a href="product-details.html">Shop details </a></li>
-                                                <li><a href="#">Other Pages <span class="float-end">>></span></a>
-                                                    <ul>
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="order-tracking.html">Order Tracking</a></li>
-                                                        <li><a href="account.html">My Account</a></li>
-                                                        <li><a href="login.html">Sign in</a></li>
-                                                        <li><a href="register.html">Register</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-icon"><a href="#">News</a>
-                                            <ul>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="blog-grid.html">News Grid</a></li>
-                                                <li><a href="blog-left-sidebar.html">News Left sidebar</a></li>
-                                                <li><a href="blog-right-sidebar.html">News Right sidebar</a></li>
-                                                <li><a href="blog-details.html">News details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-icon"><a href="#">Pages</a>
-                                            <ul class="mega-menu">
-                                                <li><a href="#">Inner Pages</a>
-                                                    <ul>
-                                                        <li><a href="portfolio.html">Portfolio</a></li>
-                                                        <li><a href="portfolio-2.html">Portfolio - 02</a></li>
-                                                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                        <li><a href="team.html">Team</a></li>
-                                                        <li><a href="team-details.html">Team Details</a></li>
-                                                        <li><a href="faq.html">FAQ</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Inner Pages</a>
-                                                    <ul>
-                                                        <li><a href="history.html">History</a></li>
-                                                        <li><a href="add-listing.html">Add Listing</a></li>
-                                                        <li><a href="locations.html">Google Map Locations</a></li>
-                                                        <li><a href="404.html">404</a></li>
-                                                        <li><a href="contact.html">Contact</a></li>
-                                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Shop Pages</a>
-                                                    <ul>
-                                                        <li><a href="shop.html">Shop</a></li>
-                                                        <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
-                                                        <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
-                                                        <li><a href="shop-grid.html">Shop Grid</a></li>
-                                                        <li><a href="product-details.html">Shop details </a></li>
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="shop.html"><img src="img/banner/menu-banner-1.jpg" alt="#"></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="../">Početna</a></li>
+                                        <li><a href="../o-nama/">O nama</a></li>
+                                        <li><a href="../nekretnine/">Nekretnine</a></li>
+                                        <li><a href="../faq/">FAQ</a></li>
+                                        <li><a href="../kontakt/">Kontakt</a></li>
                                     </ul>
                                 </div>
                             </nav>
                         </div>
                     </div>
                     <div class="col ltn__header-options ltn__header-options-2 mb-sm-20">
-                        <!-- header-search-1 -->
-                        <div class="header-search-wrap">
-                            <div class="header-search-1">
-                                <div class="search-icon">
-                                    <i class="icon-search for-search-show"></i>
-                                    <i class="icon-cancel  for-search-close"></i>
-                                </div>
-                            </div>
-                            <div class="header-search-1-form">
-                                <form id="#" method="get"  action="#">
-                                    <input type="text" name="search" value="" placeholder="Search here..."/>
-                                    <button type="submit">
-                                        <span><i class="icon-search"></i></span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- user-menu -->
-                        <div class="ltn__drop-menu user-menu">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="icon-user"></i></a>
-                                    <ul>
-                                        <li><a href="login.html">Sign in</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="account.html">My Account</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- mini-cart -->
-                        <div class="mini-cart-icon">
-                            <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
-                                <i class="icon-shopping-cart"></i>
-                                <sup>2</sup>
-                            </a>
-                        </div>
-                        <!-- mini-cart -->
                         <!-- Mobile Menu Button -->
                         <div class="mobile-menu-toggle d-xl-none">
                             <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
@@ -309,70 +140,6 @@
         <!-- ltn__header-middle-area end -->
     </header>
     <!-- HEADER AREA END -->
-
-    <!-- Utilize Cart Menu Start -->
-    <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">
-        <div class="ltn__utilize-menu-inner ltn__scrollbar">
-            <div class="ltn__utilize-menu-head">
-                <span class="ltn__utilize-menu-title">Cart</span>
-                <button class="ltn__utilize-close">×</button>
-            </div>
-            <div class="mini-cart-product-area ltn__scrollbar">
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/product/1.png" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">Wheel Bearing Retainer</a></h6>
-                        <span class="mini-cart-quantity">1 x $65.00</span>
-                    </div>
-                </div>
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/product/2.png" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">3 Rooms Manhattan</a></h6>
-                        <span class="mini-cart-quantity">1 x $85.00</span>
-                    </div>
-                </div>
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/product/3.png" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">OE Replica Wheels</a></h6>
-                        <span class="mini-cart-quantity">1 x $92.00</span>
-                    </div>
-                </div>
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/product/4.png" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">Shock Mount Insulator</a></h6>
-                        <span class="mini-cart-quantity">1 x $68.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="mini-cart-footer">
-                <div class="mini-cart-sub-total">
-                    <h5>Subtotal: <span>$310.00</span></h5>
-                </div>
-                <div class="btn-wrapper">
-                    <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
-                    <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
-                </div>
-                <p>Free Shipping on All Orders Over $100!</p>
-            </div>
-
-        </div>
-    </div>
-    <!-- Utilize Cart Menu End -->
 
     <!-- Utilize Mobile Menu Start -->
     <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
@@ -517,11 +284,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ltn__breadcrumb-inner">
-                        <h1 class="page-title">Product Details</h1>
+                        <h1 class="page-title"><?php echo $data['naslov']; ?></h1>
                         <div class="ltn__breadcrumb-list">
                             <ul>
-                                <li><a href="index.html"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> Home</a></li>
-                                <li>Product Details</li>
+                                <li><a href="../"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> Početna</a></li>
+                                <li><?php echo $data['naslov']; ?></li>
                             </ul>
                         </div>
                     </div>
@@ -531,83 +298,40 @@
     </div>
     <!-- BREADCRUMB AREA END -->
 
-    <!-- IMAGE SLIDER AREA START (img-slider-3) -->
-    <div class="ltn__img-slider-area mb-90">
-        <div class="container-fluid">
-            <div class="row ltn__image-slider-5-active slick-arrow-1 slick-arrow-1-inner ltn__no-gutter-all">
-                <div class="col-lg-12">
-                    <div class="ltn__img-slide-item-4">
-                        <a href="img/img-slide/31.jpg" data-rel="lightcase:myCollection">
-                            <img src="img/img-slide/31.jpg" alt="Image">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__img-slide-item-4">
-                        <a href="img/img-slide/32.jpg" data-rel="lightcase:myCollection">
-                            <img src="img/img-slide/32.jpg" alt="Image">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__img-slide-item-4">
-                        <a href="img/img-slide/33.jpg" data-rel="lightcase:myCollection">
-                            <img src="img/img-slide/33.jpg" alt="Image">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__img-slide-item-4">
-                        <a href="img/img-slide/34.jpg" data-rel="lightcase:myCollection">
-                            <img src="img/img-slide/34.jpg" alt="Image">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__img-slide-item-4">
-                        <a href="img/img-slide/35.jpg" data-rel="lightcase:myCollection">
-                            <img src="img/img-slide/35.jpg" alt="Image">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- IMAGE SLIDER AREA END -->
-
     <!-- SHOP DETAILS AREA START -->
-    <div class="ltn__shop-details-area pb-10">
+    <div class="ltn__shop-details-area pb-10 pt-50">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="ltn__shop-details-inner ltn__page-details-inner mb-60">
                         <div class="ltn__blog-meta">
                             <ul>
+                                <?php
+                                
+                                if($data['izdvojeno'] === 'Da'){ ?>
+                                    <li class="ltn__blog-category">
+                                        <a href="#">Izdvojeno</a>
+                                    </li>
+                                <?php }
+
+                                ?>
                                 <li class="ltn__blog-category">
-                                    <a href="#">Featured</a>
-                                </li>
-                                <li class="ltn__blog-category">
-                                    <a class="bg-orange" href="#">For Rent</a>
+                                    <a class="bg-orange" href="#"><?php echo $data['kategorija']; ?></a>
                                 </li>
                                 <li class="ltn__blog-date">
-                                    <i class="far fa-calendar-alt"></i>May 19, 2021
-                                </li>
-                                <li>
-                                    <a href="#"><i class="far fa-comments"></i>35 Comments</a>
+                                    <i class="far fa-calendar-alt"></i><?php echo $data['datum']; ?>
                                 </li>
                             </ul>
                         </div>
-                        <h1>Diamond Manor Apartment</h1>
-                        <label><span class="ltn__secondary-color"><i class="flaticon-pin"></i></span> Belmont Gardens, Chicago</label>
-                        <h4 class="title-2">Description</h4>
-                        <p>Massa tempor nec feugiat nisl pretium. Egestas fringilla phasellus faucibus scelerisque eleifend donec
-                            Porta nibh venenatis cras sed felis eget velit aliquet. Neque volutpat ac tincidunt vitae semper
-                            quis lectus. Turpis in eu mi bibendum neque egestas congue quisque. Sed elementum tempus egestas
-                            sed sed risus pretium quam. Dignissim sodales ut eu sem. Nibh mauris cursus mattis molestee
-                            iaculis at erat pellentesque. Id interdum velit laoreet id donec ultrices tincidunt.</p>
-                        <p>To the left is the modern kitchen with central island, leading through to the unique breakfast family room which feature glass walls and doors out onto the garden and access to the separate utility room.</p>
-
-                        <h4 class="title-2">Property Detail</h4>  
+                        <h1><?php echo $data['naslov']; ?></h1>
+                        <label><span class="ltn__secondary-color"><i class="flaticon-pin"></i></span> <?php echo $data['naselje']; ?>, <?php echo $data['grad']; ?></label>
+                        <div class="product-price" style="color: var(--ltn__secondary-color);font-size: 22px;margin-bottom: 26px;margin-top:26px;text-shadow: 1px 1px #000;">
+                            <span>Cijena: <?php echo $data['cijena']; ?></span>
+                        </div>
+                        <img src="../<?php echo $data['featured_image']; ?>">
+                        <h4 class="title-2">Opis nekretnine</h4>
+                        <p><?php echo $data['opis']; ?></p>
+                        <!-- <h4 class="title-2">Osobine nekretnine</h4>  
                         <div class="property-detail-info-list section-bg-1 clearfix mb-60">                          
                             <ul>
                                 <li><label>Property ID:</label> <span>HZ29</span></li>
@@ -623,9 +347,9 @@
                                 <li><label>Price:</label> <span>2</span></li>
                                 <li><label>Property Status:</label> <span>For Sale</span></li>
                             </ul>
-                        </div>
+                        </div> -->
                                         
-                        <h4 class="title-2">Facts and Features</h4>
+                        <!-- <h4 class="title-2">Facts and Features</h4>
                         <div class="property-detail-feature-list clearfix mb-45">                            
                             <ul>
                                 <li>
@@ -701,9 +425,9 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
 
-                        <h4 class="title-2">From Our Gallery</h4>
+                        <!-- <h4 class="title-2">Iz naše galerije</h4>
                         <div class="ltn__property-details-gallery mb-30">
                             <div class="row">
                                 <div class="col-md-6">
@@ -720,9 +444,9 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <h4 class="title-2 mb-10">Amenities</h4>
+                        <!-- <h4 class="title-2 mb-10">Značajke</h4>
                         <div class="property-details-amenities mb-60">
                             <div class="row">
                                 <div class="col-lg-4 col-md-6">
@@ -834,354 +558,46 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <h4 class="title-2">Location</h4>
+                        <h4 class="title-2">Lokacija</h4>
                         <div class="property-details-google-map mb-60">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9334.271551495209!2d-73.97198251485975!3d40.668170674982946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b0456b5a2e7%3A0x68bdf865dda0b669!2sBrooklyn%20Botanic%20Garden%20Shop!5e0!3m2!1sen!2sbd!4v1590597267201!5m2!1sen!2sbd" width="100%" height="100%" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsmcM4lqzF4d4cPx7lfn9keR_M_P-WTS8&center=<?php echo $data['latitude'].','.$data['longitude']; ?>&q=<?php echo $data['latitude'].','.$data['longitude']; ?>" width="100%" height="100%" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         </div>
 
-                        <h4 class="title-2">Floor Plans</h4>
-                        <!-- APARTMENTS PLAN AREA START -->
-                        <div class="ltn__apartments-plan-area product-details-apartments-plan mb-60">
-                            <div class="ltn__tab-menu ltn__tab-menu-3 ltn__tab-menu-top-right-- text-uppercase--- text-center---">
-                                <div class="nav">
-                                    <a data-bs-toggle="tab" href="#liton_tab_3_1">First Floor</a>
-                                    <a class="active show"  data-bs-toggle="tab" href="#liton_tab_3_2" class="">Second Floor</a>
-                                    <a data-bs-toggle="tab" href="#liton_tab_3_3" class="">Third Floor</a>
-                                    <a data-bs-toggle="tab" href="#liton_tab_3_4" class="">Top Garden</a>
-                                </div>
-                            </div>
-                            <div class="tab-content">
-                                <div class="tab-pane fade" id="liton_tab_3_1">
-                                    <div class="ltn__apartments-tab-content-inner">
-                                        <div class="row">
-                                            <div class="col-lg-7">
-                                                <div class="apartments-plan-img">
-                                                    <img src="img/others/10.png" alt="#">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="apartments-plan-info ltn__secondary-bg--- text-color-white---">
-                                                    <h2>First Floor</h2>
-                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
-                                                        Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
-                                                        eiusmod tempor.Incididunt labore et dolore magna aliqua.
-                                                        sed ayd minim veniam.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="product-details-apartments-info-list  section-bg-1">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="apartments-info-list apartments-info-list-color mt-40---">
-                                                                <ul>
-                                                                    <li><label>Total Area</label> <span>2800 Sq. Ft</span></li>
-                                                                    <li><label>Bedroom</label> <span>150 Sq. Ft</span></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="apartments-info-list apartments-info-list-color mt-40---">
-                                                                <ul>
-                                                                    <li><label>Belcony/Pets</label> <span>Allowed</span></li>
-                                                                    <li><label>Lounge</label> <span>650 Sq. Ft</span></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade active show" id="liton_tab_3_2">
-                                    <div class="ltn__product-tab-content-inner">
-                                        <div class="row">
-                                            <div class="col-lg-7">
-                                                <div class="apartments-plan-img">
-                                                    <img src="img/others/10.png" alt="#">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="apartments-plan-info ltn__secondary-bg--- text-color-white---">
-                                                    <h2>Second Floor</h2>
-                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
-                                                        Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
-                                                        eiusmod tempor.Incididunt labore et dolore magna aliqua.
-                                                        sed ayd minim veniam.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="product-details-apartments-info-list  section-bg-1">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="apartments-info-list apartments-info-list-color mt-40---">
-                                                                <ul>
-                                                                    <li><label>Total Area</label> <span>2800 Sq. Ft</span></li>
-                                                                    <li><label>Bedroom</label> <span>150 Sq. Ft</span></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="apartments-info-list apartments-info-list-color mt-40---">
-                                                                <ul>
-                                                                    <li><label>Belcony/Pets</label> <span>Allowed</span></li>
-                                                                    <li><label>Lounge</label> <span>650 Sq. Ft</span></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="liton_tab_3_3">
-                                    <div class="ltn__product-tab-content-inner">
-                                        <div class="row">
-                                            <div class="col-lg-7">
-                                                <div class="apartments-plan-img">
-                                                    <img src="img/others/10.png" alt="#">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="apartments-plan-info ltn__secondary-bg--- text-color-white---">
-                                                    <h2>Third Floor</h2>
-                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
-                                                        Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
-                                                        eiusmod tempor.Incididunt labore et dolore magna aliqua.
-                                                        sed ayd minim veniam.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="product-details-apartments-info-list  section-bg-1">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="apartments-info-list apartments-info-list-color mt-40---">
-                                                                <ul>
-                                                                    <li><label>Total Area</label> <span>2800 Sq. Ft</span></li>
-                                                                    <li><label>Bedroom</label> <span>150 Sq. Ft</span></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="apartments-info-list apartments-info-list-color mt-40---">
-                                                                <ul>
-                                                                    <li><label>Belcony/Pets</label> <span>Allowed</span></li>
-                                                                    <li><label>Lounge</label> <span>650 Sq. Ft</span></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="liton_tab_3_4">
-                                    <div class="ltn__product-tab-content-inner">
-                                        <div class="row">
-                                            <div class="col-lg-7">
-                                                <div class="apartments-plan-img">
-                                                    <img src="img/others/10.png" alt="#">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="apartments-plan-info ltn__secondary-bg--- text-color-white---">
-                                                    <h2>Top Garden</h2>
-                                                    <p>Enimad minim veniam quis nostrud exercitation ullamco laboris.
-                                                        Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo
-                                                        eiusmod tempor.Incididunt labore et dolore magna aliqua.
-                                                        sed ayd minim veniam.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="product-details-apartments-info-list  section-bg-1">
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="apartments-info-list apartments-info-list-color mt-40---">
-                                                                <ul>
-                                                                    <li><label>Total Area</label> <span>2800 Sq. Ft</span></li>
-                                                                    <li><label>Bedroom</label> <span>150 Sq. Ft</span></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="apartments-info-list apartments-info-list-color mt-40---">
-                                                                <ul>
-                                                                    <li><label>Belcony/Pets</label> <span>Allowed</span></li>
-                                                                    <li><label>Lounge</label> <span>650 Sq. Ft</span></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- APARTMENTS PLAN AREA END -->
-
-                        <h4 class="title-2">Property Video</h4>
-                        <div class="ltn__video-bg-img ltn__video-popup-height-500 bg-overlay-black-50 bg-image mb-60" data-bs-bg="img/others/5.jpg">
-                            <a class="ltn__video-icon-2 ltn__video-icon-2-border---" href="https://www.youtube.com/embed/eWUxqVFBq74?autoplay=1&showinfo=0" data-rel="lightcase:myCollection">
-                                <i class="fa fa-play"></i>
-                            </a>
-                        </div>
-                        
-                        <div class="ltn__shop-details-tab-content-inner--- ltn__shop-details-tab-inner-2 ltn__product-details-review-inner mb-60">
-                            <h4 class="title-2">Customer Reviews</h4>
-                            <div class="product-ratting">
-                                <ul>
-                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                    <li class="review-total"> <a href="#"> ( 95 Reviews )</a></li>
-                                </ul>
-                            </div>
-                            <hr>
-                            <!-- comment-area -->
-                            <div class="ltn__comment-area mb-30">
-                                <div class="ltn__comment-inner">
-                                    <ul>
-                                        <li>
-                                            <div class="ltn__comment-item clearfix">
-                                                <div class="ltn__commenter-img">
-                                                    <img src="img/testimonial/1.jpg" alt="Image">
-                                                </div>
-                                                <div class="ltn__commenter-comment">
-                                                    <h6><a href="#">Adam Smit</a></h6>
-                                                    <div class="product-ratting">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                            <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
-                                                    <span class="ltn__comment-reply-btn">September 3, 2020</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ltn__comment-item clearfix">
-                                                <div class="ltn__commenter-img">
-                                                    <img src="img/testimonial/3.jpg" alt="Image">
-                                                </div>
-                                                <div class="ltn__commenter-comment">
-                                                    <h6><a href="#">Adam Smit</a></h6>
-                                                    <div class="product-ratting">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                            <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
-                                                    <span class="ltn__comment-reply-btn">September 2, 2020</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="ltn__comment-item clearfix">
-                                                <div class="ltn__commenter-img">
-                                                    <img src="img/testimonial/2.jpg" alt="Image">
-                                                </div>
-                                                <div class="ltn__commenter-comment">
-                                                    <h6><a href="#">Adam Smit</a></h6>
-                                                    <div class="product-ratting">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                            <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
-                                                    <span class="ltn__comment-reply-btn">September 2, 2020</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- comment-reply -->
-                            <div class="ltn__comment-reply-area ltn__form-box mb-30">
-                                <form action="#">
-                                    <h4>Add a Review</h4>
-                                    <div class="mb-30">
-                                        <div class="add-a-review">
-                                            <h6>Your Ratings:</h6>
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="input-item input-item-textarea ltn__custom-icon">
-                                        <textarea placeholder="Type your comments...."></textarea>
-                                    </div>
-                                    <div class="input-item input-item-name ltn__custom-icon">
-                                        <input type="text" placeholder="Type your name....">
-                                    </div>
-                                    <div class="input-item input-item-email ltn__custom-icon">
-                                        <input type="email" placeholder="Type your email....">
-                                    </div>
-                                    <div class="input-item input-item-website ltn__custom-icon">
-                                        <input type="text" name="website" placeholder="Type your website....">
-                                    </div>
-                                    <label class="mb-0"><input type="checkbox" name="agree"> Save my name, email, and website in this browser for the next time I comment.</label>
-                                    <div class="btn-wrapper">
-                                        <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <h4 class="title-2">Related Properties</h4>
+                        <h4 class="title-2">Slične nekretnine</h4>
                         <div class="row">
+                            <?php
+                            $query = "SELECT * FROM objave WHERE cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO' ORDER BY RAND() LIMIT 2";
+                            $result = mysqli_query($conn, $query);
+                            while($row = mysqli_fetch_assoc($result)){ ?>
                             <!-- ltn__product-item -->
                             <div class="col-xl-6 col-sm-6 col-12">
                                 <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
                                     <div class="product-img">
-                                        <a href="product-details.html"><img src="img/product-3/1.jpg" alt="#"></a>
+                                        <a href="../nekretnina/?post=<?php echo $row['sifra']; ?>"><img src="../<?php echo $row['featured_image']; ?>" alt="#"></a>
                                         <div class="real-estate-agent">
                                             <div class="agent-img">
-                                                <a href="team-details.html"><img src="img/blog/author.jpg" alt="#"></a>
+                                                <a href="#"><img src="../img/agents/agent.jpg" alt="#"></a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="product-info">
                                         <div class="product-badge">
                                             <ul>
-                                                <li class="sale-badg">For Rent</li>
+                                                <li class="sale-badg"><?php echo $row['kategorija']; ?></li>
                                             </ul>
                                         </div>
-                                        <h2 class="product-title"><a href="product-details.html">New Apartment Nice View</a></h2>
+                                        <h2 class="product-title"><a href="../nekretnina/?post=<?php echo $row['sifra']; ?>"><?php echo $row['naslov']; ?></a></h2>
                                         <div class="product-img-location">
                                             <ul>
                                                 <li>
-                                                    <a href="product-details.html"><i class="flaticon-pin"></i> Belmont Gardens, Chicago</a>
+                                                    <a href="../nekretnina/?post=<?php echo $row['sifra']; ?>"><i class="flaticon-pin"></i> <?php echo $row['naselje']; ?>, <?php echo $row['grad']; ?></a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <ul class="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                                            <li><span>3 </span>
+                                            <!-- <li><span>3 </span>
                                                 Bedrooms
                                             </li>
                                             <li><span>2 </span>
@@ -1189,96 +605,19 @@
                                             </li>
                                             <li><span>3450 </span>
                                                 square Ft
-                                            </li>
+                                            </li> -->
                                         </ul>
-                                        <div class="product-hover-action">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                                        <i class="flaticon-expand"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                                        <i class="flaticon-heart-1"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="portfolio-details.html" title="Compare">
-                                                        <i class="flaticon-add"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                     <div class="product-info-bottom">
                                         <div class="product-price">
-                                            <span>$349,00<label>/Month</label></span>
+                                            <span><?php echo toPrice($row['cijena']); ?></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ltn__product-item -->
-                            <div class="col-xl-6 col-sm-6 col-12">
-                                <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                                    <div class="product-img">
-                                        <a href="product-details.html"><img src="img/product-3/2.jpg" alt="#"></a>
-                                        <div class="real-estate-agent">
-                                            <div class="agent-img">
-                                                <a href="team-details.html"><img src="img/blog/author.jpg" alt="#"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="product-badge">
-                                            <ul>
-                                                <li class="sale-badg">For Sale</li>
-                                            </ul>
-                                        </div>
-                                        <h2 class="product-title"><a href="product-details.html">New Apartment Nice View</a></h2>
-                                        <div class="product-img-location">
-                                            <ul>
-                                                <li>
-                                                    <a href="product-details.html"><i class="flaticon-pin"></i> Belmont Gardens, Chicago</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <ul class="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                                            <li><span>3 </span>
-                                                Bedrooms
-                                            </li>
-                                            <li><span>2 </span>
-                                                Bathrooms
-                                            </li>
-                                            <li><span>3450 </span>
-                                                square Ft
-                                            </li>
-                                        </ul>
-                                        <div class="product-hover-action">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                                        <i class="flaticon-expand"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                                        <i class="flaticon-heart-1"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="portfolio-details.html" title="Compare">
-                                                        <i class="flaticon-add"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-info-bottom">
-                                        <div class="product-price">
-                                            <span>$349,00<label>/Month</label></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <?php }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -1287,164 +626,108 @@
                         <!-- Author Widget -->
                         <div class="widget ltn__author-widget">
                             <div class="ltn__author-widget-inner text-center">
-                                <img src="img/team/4.jpg" alt="Image">
-                                <h5>Rosalina D. Willaimson</h5>
-                                <small>Traveller/Photographer</small>
-                                <div class="product-ratting">
+                                <img src="../img/agents/agent.jpg" alt="Image">
+                                <h5>Slađan Suljetović dipl.iur.</h5>
+                                <small>Broj telefona: +38761 663 666</small>
+                                <div class="ltn__social-media pt-20">
                                     <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                        <li class="review-total"> <a href="#"> ( 1 Reviews )</a></li>
-                                    </ul>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis distinctio, odio, eligendi suscipit reprehenderit atque.</p>
-                                <div class="ltn__social-media">
-                                    <ul>
-                                        <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                        
-                                        <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="https://www.instagram.com/suljetovic.s/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.facebook.com/sladan.suljetovic" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <!-- Search Widget -->
-                        <div class="widget ltn__search-widget">
-                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Search Objects</h4>
-                            <form action="#">
-                                <input type="text" name="search" placeholder="Search your keyword...">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
                         <!-- Form Widget -->
                         <div class="widget ltn__form-widget">
-                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Drop Messege For Book</h4>
+                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Pošaljite nam poruku</h4>
                             <form action="#">
-                                <input type="text" name="yourname" placeholder="Your Name*">
-                                <input type="text" name="youremail" placeholder="Your e-Mail*">
-                                <textarea name="yourmessage" placeholder="Write Message..."></textarea>
-                                <button type="submit" class="btn theme-btn-1">Send Messege</button>
+                                <input type="text" name="yourname" placeholder="Vaše ime*">
+                                <input type="text" name="youremail" placeholder="Vaš e-Mail*">
+                                <textarea name="yourmessage" placeholder="Napišite poruku..."></textarea>
+                                <button type="submit" class="btn theme-btn-1">Pošalji poruku</button>
                             </form>
-                        </div>
-                        <!-- Top Rated Product Widget -->
-                        <div class="widget ltn__top-rated-product-widget">
-                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Top Rated Product</h4>
-                            <ul>
-                                <li>
-                                    <div class="top-rated-product-item clearfix">
-                                        <div class="top-rated-product-img">
-                                            <a href="product-details.html"><img src="img/product/1.png" alt="#"></a>
-                                        </div>
-                                        <div class="top-rated-product-info">
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <h6><a href="product-details.html">Luxury House In Greenville </a></h6>
-                                            <div class="product-price">
-                                                <span>$30,000.00</span>
-                                                <del>$35,000.00</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="top-rated-product-item clearfix">
-                                        <div class="top-rated-product-img">
-                                            <a href="product-details.html"><img src="img/product/2.png" alt="#"></a>
-                                        </div>
-                                        <div class="top-rated-product-info">
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <h6><a href="product-details.html">Apartment with Subunits</a></h6>
-                                            <div class="product-price">
-                                                <span>$30,000.00</span>
-                                                <del>$35,000.00</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="top-rated-product-item clearfix">
-                                        <div class="top-rated-product-img">
-                                            <a href="product-details.html"><img src="img/product/3.png" alt="#"></a>
-                                        </div>
-                                        <div class="top-rated-product-info">
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <h6><a href="product-details.html">3 Rooms Manhattan</a></h6>
-                                            <div class="product-price">
-                                                <span>$30,000.00</span>
-                                                <del>$35,000.00</del>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
                         <!-- Menu Widget (Category) -->
                         <div class="widget ltn__menu-widget ltn__menu-widget-2--- ltn__menu-widget-2-color-2---">
-                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Top Categories</h4>
+                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Kategorije</h4>
                             <ul>
-                                <li><a href="#">Apartments <span>(26)</span></a></li>
-                                <li><a href="#">Picture Stodio <span>(30)</span></a></li>
-                                <li><a href="#">Office  <span>(71)</span></a></li>
-                                <li><a href="#">Luxary Vilas <span>(56)</span></a></li>
-                                <li><a href="#">Duplex House <span>(60)</span></a></li>
+                                <?php
+                                $query = "SELECT * FROM objave WHERE vrsta='Stan' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
+                                $result = mysqli_query($conn, $query);
+                                $broj = mysqli_num_rows($result)
+                                ?>
+                                <li><a href="../nekretnine/?stan=on">Stanovi <span>(<?php echo $broj; ?>)</span></a></li>
+                                <?php
+                                $query = "SELECT * FROM objave WHERE vrsta='Kuća' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
+                                $result = mysqli_query($conn, $query);
+                                $broj = mysqli_num_rows($result)
+                                ?>
+                                <li><a href="../nekretnine/?kuca=on">Kuće  <span>(<?php echo $broj; ?>)</span></a></li>
+                                <?php
+                                $query = "SELECT * FROM objave WHERE vrsta='Zemljište' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
+                                $result = mysqli_query($conn, $query);
+                                $broj = mysqli_num_rows($result)
+                                ?>
+                                <li><a href="../nekretnine/?zemljiste=on">Zemljišta  <span>(<?php echo $broj; ?>)</span></a></li>
+                                <?php
+                                $query = "SELECT * FROM objave WHERE vrsta='Garaža' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
+                                $result = mysqli_query($conn, $query);
+                                $broj = mysqli_num_rows($result)
+                                ?>
+                                <li><a href="../nekretnine/?garaza=on">Garaže  <span>(<?php echo $broj; ?>)</span></a></li>
+                                <?php
+                                $query = "SELECT * FROM objave WHERE vrsta='Poslovni prostor' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
+                                $result = mysqli_query($conn, $query);
+                                $broj = mysqli_num_rows($result)
+                                ?>
+                                <li><a href="../nekretnine/?poslovniprostor=on">Poslovni prostori <span>(<?php echo $broj; ?>)</span></a></li>
+                                <?php
+                                $query = "SELECT * FROM objave WHERE vrsta='Vikendica' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
+                                $result = mysqli_query($conn, $query);
+                                $broj = mysqli_num_rows($result)
+                                ?>
+                                <li><a href="../nekretnine/?vikendica=on">Vikendice <span>(<?php echo $broj; ?>)</span></a></li>
+                                <?php
+                                $query = "SELECT * FROM objave WHERE vrsta='Parking mjesto' AND cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO'";
+                                $result = mysqli_query($conn, $query);
+                                $broj = mysqli_num_rows($result)
+                                ?>
+                                <li><a href="../nekretnine/?parkingmjesto=on">Parking Mjesta <span>(<?php echo $broj; ?>)</span></a></li>
                             </ul>
                         </div>
                         <!-- Popular Product Widget -->
                         <div class="widget ltn__popular-product-widget">       
-                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Popular Properties</h4>                     
+                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Popularne nekretnine</h4>                     
                             <div class="row ltn__popular-product-widget-active slick-arrow-1">
+                                <?php
+                                $query = "SELECT * FROM objave WHERE cijena != 'PRODATO' AND cijena != 'IZNAJMLJENO' ORDER BY RAND() LIMIT 2";
+                                $result = mysqli_query($conn, $query);
+                                while($row = mysqli_fetch_assoc($result)){ ?>
                                 <!-- ltn__product-item -->
                                 <div class="col-12">
                                     <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
                                         <div class="product-img">
-                                            <a href="product-details.html"><img src="img/product-3/6.jpg" alt="#"></a>
+                                            <a href="../nekretnina/?post=<?php echo $row['sifra']; ?>"><img src="../<?php echo $row['featured_image']; ?>" alt="#"></a>
                                             <div class="real-estate-agent">
                                                 <div class="agent-img">
-                                                    <a href="team-details.html"><img src="img/blog/author.jpg" alt="#"></a>
+                                                    <a href="#"><img src="../img/agents/agent.jpg" alt="#"></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="product-info">
                                             <div class="product-price">
-                                                <span>$349,00<label>/Month</label></span>
+                                                <span><?php echo toPrice($row['cijena']); ?></span>
                                             </div>
-                                            <h2 class="product-title"><a href="product-details.html">New Apartment Nice View</a></h2>
+                                            <h2 class="product-title"><a href="../nekretnina/?post=<?php echo $row['sifra']; ?>"><?php echo $row['naslov']; ?></a></h2>
                                             <div class="product-img-location">
                                                 <ul>
                                                     <li>
-                                                        <a href="product-details.html"><i class="flaticon-pin"></i> Belmont Gardens, Chicago</a>
+                                                        <a href="../nekretnina/?post=<?php echo $row['sifra']; ?>"><i class="flaticon-pin"></i> <?php echo $row['naselje']; ?>, <?php echo $row['grad']; ?></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <ul class="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                                                <li><span>3 </span>
+                                                <!-- <li><span>3 </span>
                                                     Bedrooms
                                                 </li>
                                                 <li><span>2 </span>
@@ -1452,198 +735,27 @@
                                                 </li>
                                                 <li><span>3450 </span>
                                                     square Ft
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- ltn__product-item -->
-                                <div class="col-12">
-                                    <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                                        <div class="product-img">
-                                            <a href="product-details.html"><img src="img/product-3/4.jpg" alt="#"></a>
-                                            <div class="real-estate-agent">
-                                                <div class="agent-img">
-                                                    <a href="team-details.html"><img src="img/blog/author.jpg" alt="#"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="product-price">
-                                                <span>$349,00<label>/Month</label></span>
-                                            </div>
-                                            <h2 class="product-title"><a href="product-details.html">New Apartment Nice View</a></h2>
-                                            <div class="product-img-location">
-                                                <ul>
-                                                    <li>
-                                                        <a href="product-details.html"><i class="flaticon-pin"></i> Belmont Gardens, Chicago</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <ul class="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                                                <li><span>3 </span>
-                                                    Bedrooms
-                                                </li>
-                                                <li><span>2 </span>
-                                                    Bathrooms
-                                                </li>
-                                                <li><span>3450 </span>
-                                                    square Ft
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- ltn__product-item -->
-                                <div class="col-12">
-                                    <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                                        <div class="product-img">
-                                            <a href="product-details.html"><img src="img/product-3/5.jpg" alt="#"></a>
-                                            <div class="real-estate-agent">
-                                                <div class="agent-img">
-                                                    <a href="team-details.html"><img src="img/blog/author.jpg" alt="#"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="product-price">
-                                                <span>$349,00<label>/Month</label></span>
-                                            </div>
-                                            <h2 class="product-title"><a href="product-details.html">New Apartment Nice View</a></h2>
-                                            <div class="product-img-location">
-                                                <ul>
-                                                    <li>
-                                                        <a href="product-details.html"><i class="flaticon-pin"></i> Belmont Gardens, Chicago</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <ul class="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-                                                <li><span>3 </span>
-                                                    Bedrooms
-                                                </li>
-                                                <li><span>2 </span>
-                                                    Bathrooms
-                                                </li>
-                                                <li><span>3450 </span>
-                                                    square Ft
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
+        
                                 <!--  -->
                             </div>
                         </div>
-                        <!-- Popular Post Widget -->
-                        <div class="widget ltn__popular-post-widget">
-                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Leatest Blogs</h4>
-                            <ul>
-                                <li>
-                                    <div class="popular-post-widget-item clearfix">
-                                        <div class="popular-post-widget-img">
-                                            <a href="blog-details.html"><img src="img/team/5.jpg" alt="#"></a>
-                                        </div>
-                                        <div class="popular-post-widget-brief">
-                                            <h6><a href="blog-details.html">Lorem ipsum dolor sit
-                                                cing elit, sed do.</a></h6>
-                                            <div class="ltn__blog-meta">
-                                                <ul>
-                                                    <li class="ltn__blog-date">
-                                                        <a href="#"><i class="far fa-calendar-alt"></i>June 22, 2020</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="popular-post-widget-item clearfix">
-                                        <div class="popular-post-widget-img">
-                                            <a href="blog-details.html"><img src="img/team/6.jpg" alt="#"></a>
-                                        </div>
-                                        <div class="popular-post-widget-brief">
-                                            <h6><a href="blog-details.html">Lorem ipsum dolor sit
-                                                cing elit, sed do.</a></h6>
-                                            <div class="ltn__blog-meta">
-                                                <ul>
-                                                    <li class="ltn__blog-date">
-                                                        <a href="#"><i class="far fa-calendar-alt"></i>June 22, 2020</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="popular-post-widget-item clearfix">
-                                        <div class="popular-post-widget-img">
-                                            <a href="blog-details.html"><img src="img/team/7.jpg" alt="#"></a>
-                                        </div>
-                                        <div class="popular-post-widget-brief">
-                                            <h6><a href="blog-details.html">Lorem ipsum dolor sit
-                                                cing elit, sed do.</a></h6>
-                                            <div class="ltn__blog-meta">
-                                                <ul>
-                                                    <li class="ltn__blog-date">
-                                                        <a href="#"><i class="far fa-calendar-alt"></i>June 22, 2020</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="popular-post-widget-item clearfix">
-                                        <div class="popular-post-widget-img">
-                                            <a href="blog-details.html"><img src="img/team/8.jpg" alt="#"></a>
-                                        </div>
-                                        <div class="popular-post-widget-brief">
-                                            <h6><a href="blog-details.html">Lorem ipsum dolor sit
-                                                cing elit, sed do.</a></h6>
-                                            <div class="ltn__blog-meta">
-                                                <ul>
-                                                    <li class="ltn__blog-date">
-                                                        <a href="#"><i class="far fa-calendar-alt"></i>June 22, 2020</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
                         <!-- Social Media Widget -->
                         <div class="widget ltn__social-media-widget">
-                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Follow us</h4>
+                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Pratite nas</h4>
                             <div class="ltn__social-media-2">
                                 <ul>
-                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/nekre.ba/" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCoP8Inu_mE0F4oQCq1rOkIw" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.instagram.com/agencija_nekre/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                                     
                                 </ul>
                             </div>
-                        </div>
-                        <!-- Tagcloud Widget -->
-                        <div class="widget ltn__tagcloud-widget">
-                            <h4 class="ltn__widget-title ltn__widget-title-border-2">Popular Tags</h4>
-                            <ul>
-                                <li><a href="#">Popular</a></li>
-                                <li><a href="#">desgin</a></li>
-                                <li><a href="#">ux</a></li>
-                                <li><a href="#">usability</a></li>
-                                <li><a href="#">develop</a></li>
-                                <li><a href="#">icon</a></li>
-                                <li><a href="#">Car</a></li>
-                                <li><a href="#">Service</a></li>
-                                <li><a href="#">Repairs</a></li>
-                                <li><a href="#">Auto Parts</a></li>
-                                <li><a href="#">Oil</a></li>
-                                <li><a href="#">Dealer</a></li>
-                                <li><a href="#">Oil Change</a></li>
-                                <li><a href="#">Body Color</a></li>
-                            </ul>
                         </div>
                         <!-- Banner Widget -->
                         <div class="widget ltn__banner-widget d-none">
@@ -1990,11 +1102,11 @@
                 <div class="col-lg-12">
                     <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg position-relative text-center---">
                         <div class="coll-to-info text-color-white">
-                            <h1>Looking for a dream home?</h1>
-                            <p>We can help you realize your dream of a new home</p>
+                            <h1>Tražite dom iz snova?</h1>
+                            <p>Možemo vam pomoći da ostvarite svoj san u novom domu!</p>
                         </div>
                         <div class="btn-wrapper">
-                            <a class="btn btn-effect-3 btn-white" href="contact.html">Explore Properties <i class="icon-next"></i></a>
+                            <a class="btn btn-effect-3 btn-white" href="nekretnine">Naše nekretnine <i class="icon-next"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2012,10 +1124,9 @@
                         <div class="footer-widget footer-about-widget">
                             <div class="footer-logo">
                                 <div class="site-logo">
-                                    <img src="img/logo-2.png" alt="Logo">
+                                    <img src="../img/logo-2.png" alt="Logo">
                                 </div>
                             </div>
-                            <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
                             <div class="footer-address">
                                 <ul>
                                     <li>
@@ -2023,7 +1134,7 @@
                                             <i class="icon-placeholder"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p>Brooklyn, New York, United States</p>
+                                            <p>Tuzla, Bosna i Hercegovina</p>
                                         </div>
                                     </li>
                                     <li>
@@ -2031,7 +1142,7 @@
                                             <i class="icon-call"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                            <p><a href="tel:+38761663666">+387 61 663 666</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -2039,62 +1150,58 @@
                                             <i class="icon-mail"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                            <p><a href="mailto:sladjan@nekre.ba">sladjan@nekre.ba</a></p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="ltn__social-media mt-20">
                                 <ul>
-                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                    <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.facebook.com/nekre.ba/" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/agencija_nekre/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCoP8Inu_mE0F4oQCq1rOkIw" title="Youtube"><i class="fab fa-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Company</h4>
+                            <h4 class="footer-title">Korisni linkovi</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="shop.html">All Products</a></li>
-                                    <li><a href="locations.html">Locations Map</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="o-nama">O nama</a></li>
+                                    <li><a href="nekretnine">Nekretnine</a></li>
+                                    <li><a href="lokacija">Lokacija</a></li>
+                                    <li><a href="faq">FAQ</a></li>
+                                    <li><a href="kontakt">Kontakt</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Services</h4>
+                            <h4 class="footer-title">Nekretnine</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
-                                    <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
-                                    <li><a href="about.html">Terms & Conditions</a></li>
-                                    <li><a href="about.html">Promotional Offers</a></li>
+                                    <li><a href="#">Stanovi</a></li>
+                                    <li><a href="#">Kuće</a></li>
+                                    <li><a href="#">Garaže</a></li>
+                                    <li><a href="#">Zemljišta</a></li>
+                                    <li><a href="#">Vikendice</a></li>
+                                    <li><a href="#">Vikendice</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Customer Care</h4>
+                            <h4 class="footer-title">Administracija</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
-                                    <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="#">Prijava</a></li>
+                                    <li><a href="#">Postavi nekretinu</a></li>
+                                    <li><a href="#">Uredi nekretninu</a></li>
+                                    <li><a href="#">Pogledaj statistike</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -2102,7 +1209,7 @@
                     <div class="col-xl-3 col-md-6 col-sm-12 col-12">
                         <div class="footer-widget footer-newsletter-widget">
                             <h4 class="footer-title">Newsletter</h4>
-                            <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
+                            <p>Pretplati se na naš sedmični newsletter, besplatno!</p>
                             <div class="footer-newsletter">
                                 <form action="#">
                                     <input type="email" name="email" placeholder="Email*">
@@ -2111,8 +1218,6 @@
                                     </div>
                                 </form>
                             </div>
-                            <h5 class="mt-30">We Accept</h5>
-                            <img src="img/icons/payment-4.png" alt="Payment Image">
                         </div>
                     </div>
                 </div>
@@ -2123,15 +1228,14 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="ltn__copyright-design clearfix">
-                            <p>All Rights Reserved @ Company <span class="current-year"></span></p>
+                            <p>Sva prava zadržana @ Agencija "Nekre" <span class="current-year"></span> <span style="color:#ff5a3c">||</span> Stranicu kreirao: <a href="#">Weboss Development</a></p>
                         </div>
                     </div>
                     <div class="col-md-6 col-12 align-self-center">
                         <div class="ltn__copyright-menu text-end">
                             <ul>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Claim</a></li>
-                                <li><a href="#">Privacy & Policy</a></li>
+                                <li><a href="#">Uslovi korištenja</a></li>
+                                <li><a href="#">Pravila privatnosti</a></li>
                             </ul>
                         </div>
                     </div>
@@ -2140,197 +1244,6 @@
         </div>
     </footer>
     <!-- FOOTER AREA END -->
-
-    <!-- MODAL AREA START (Quick View Modal) -->
-    <div class="ltn__modal-area ltn__quick-view-modal-area">
-        <div class="modal fade" id="quick_view_modal" tabindex="-1">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            <!-- <i class="fas fa-times"></i> -->
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                         <div class="ltn__quick-view-modal-inner">
-                             <div class="modal-product-item">
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <div class="modal-product-img">
-                                            <img src="img/product/4.png" alt="#">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="modal-product-info">
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                    <li class="review-total"> <a href="#"> ( 95 Reviews )</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3>3 Rooms Manhattan</h3>
-                                            <div class="product-price">
-                                                <span>$149.00</span>
-                                                <del>$165.00</del>
-                                            </div>
-                                            <div class="modal-product-meta ltn__product-details-menu-1">
-                                                <ul>
-                                                    <li>
-                                                        <strong>Categories:</strong> 
-                                                        <span>
-                                                            <a href="#">Parts</a>
-                                                            <a href="#">Car</a>
-                                                            <a href="#">Seat</a>
-                                                            <a href="#">Cover</a>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="ltn__product-details-menu-2">
-                                                <ul>
-                                                    <li>
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                                            <i class="fas fa-shopping-cart"></i>
-                                                            <span>ADD TO CART</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="ltn__product-details-menu-3">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#" class="" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                                            <i class="far fa-heart"></i>
-                                                            <span>Add to Wishlist</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="" title="Compare" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                                            <i class="fas fa-exchange-alt"></i>
-                                                            <span>Compare</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <hr>
-                                            <div class="ltn__social-media">
-                                                <ul>
-                                                    <li>Share:</li>
-                                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- MODAL AREA END -->
-
-    <!-- MODAL AREA START (Add To Cart Modal) -->
-    <div class="ltn__modal-area ltn__add-to-cart-modal-area">
-        <div class="modal fade" id="add_to_cart_modal" tabindex="-1">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                         <div class="ltn__quick-view-modal-inner">
-                             <div class="modal-product-item">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="modal-product-img">
-                                            <img src="img/product/1.png" alt="#">
-                                        </div>
-                                         <div class="modal-product-info">
-                                            <h5><a href="product-details.html">3 Rooms Manhattan</a></h5>
-                                            <p class="added-cart"><i class="fa fa-check-circle"></i>  Successfully added to your Cart</p>
-                                            <div class="btn-wrapper">
-                                                <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
-                                                <a href="checkout.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
-                                            </div>
-                                         </div>
-                                         <!-- additional-info -->
-                                         <div class="additional-info d-none">
-                                            <p>We want to give you <b>10% discount</b> for your first order, <br>  Use discount code at checkout</p>
-                                            <div class="payment-method">
-                                                <img src="img/icons/payment.png" alt="#">
-                                            </div>
-                                         </div>
-                                    </div>
-                                </div>
-                             </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- MODAL AREA END -->
-
-    <!-- MODAL AREA START (Wishlist Modal) -->
-    <div class="ltn__modal-area ltn__add-to-cart-modal-area">
-        <div class="modal fade" id="liton_wishlist_modal" tabindex="-1">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                         <div class="ltn__quick-view-modal-inner">
-                             <div class="modal-product-item">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="modal-product-img">
-                                            <img src="img/product/7.png" alt="#">
-                                        </div>
-                                         <div class="modal-product-info">
-                                            <h5><a href="product-details.html">3 Rooms Manhattan</a></h5>
-                                            <p class="added-cart"><i class="fa fa-check-circle"></i>  Successfully added to your Wishlist</p>
-                                            <div class="btn-wrapper">
-                                                <a href="wishlist.html" class="theme-btn-1 btn btn-effect-1">View Wishlist</a>
-                                            </div>
-                                         </div>
-                                         <!-- additional-info -->
-                                         <div class="additional-info d-none">
-                                            <p>We want to give you <b>10% discount</b> for your first order, <br>  Use discount code at checkout</p>
-                                            <div class="payment-method">
-                                                <img src="img/icons/payment.png" alt="#">
-                                            </div>
-                                         </div>
-                                    </div>
-                                </div>
-                             </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- MODAL AREA END -->
 
 </div>
 <!-- Body main wrapper end -->
