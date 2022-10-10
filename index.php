@@ -135,12 +135,6 @@
                 </div>
                 <button class="ltn__utilize-close">×</button>
             </div>
-            <div class="ltn__utilize-menu-search-form">
-                <form action="#">
-                    <input type="text" placeholder="Search...">
-                    <button><i class="fas fa-search"></i></button>
-                </form>
-            </div>
             <div class="ltn__utilize-menu">
                 <ul>
                     <li><a href="">Početna</a></li>
