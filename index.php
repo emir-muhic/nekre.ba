@@ -61,6 +61,16 @@
                                             </ul>
                                         </div>
                                     </li>
+                                    <li>
+                                        <!-- ltn__social-media -->
+                                        <div class="ltn__social-media">
+                                            <ul>
+                                                <li><a href="https://www.facebook.com/nekre.ba/" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="https://www.youtube.com/channel/UCoP8Inu_mE0F4oQCq1rOkIw" title="YouTube"><i class="fab fa-youtube"></i></a></li>
+                                                <li><a href="https://www.instagram.com/agencija_nekre/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -142,14 +152,6 @@
                     <li><a href="nekretnine/">Nekretnine</a></li>
                     <li><a href="faq/">FAQ</a></li>
                     <li><a href="kontakt/">Kontakt</a></li>
-                </ul>
-            </div>
-            <div class="ltn__social-media-2">
-                <ul>
-                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
