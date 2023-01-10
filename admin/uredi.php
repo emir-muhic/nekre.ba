@@ -78,7 +78,7 @@ $nekretnina = $_GET['edit'];
             }
           }
 
-          $query = "SELECT * FROM nekretnine WHERE sifra='$nekretnina'";
+          $query = "SELECT * FROM objave WHERE sifra='$nekretnina'";
           $result = mysqli_query($conn, $query);
           $row = mysqli_fetch_assoc($result);
           

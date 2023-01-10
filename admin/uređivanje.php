@@ -29,7 +29,7 @@ $filename1 = $_FILES["fetured_image"]["name"];
 $tempname = $_FILES["fetured_image"]["tmp_name"]; 
 $lokacija_slike = $sifrirani_folder . "/" . $filename1;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT featured_image FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT featured_image FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename1)){ $filename1 = urlToImg($row['featured_image']); } else{ unlink('../'.$row['featured_image']); }
@@ -51,7 +51,7 @@ $filename2 = $_FILES["slika1"]["name"];
 $tempname = $_FILES["slika1"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename2;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika1 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika1 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename2)){ $filename2 = urlToImg($row['slika1']); } else{ unlink('../'.$row['slika1']); }
@@ -61,7 +61,7 @@ $filename3 = $_FILES["slika2"]["name"];
 $tempname = $_FILES["slika2"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename3;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika2 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika2 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename3)){ $filename3 = urlToImg($row['slika2']); } else{ unlink('../'.$row['slika2']); }
@@ -71,7 +71,7 @@ $filename4 = $_FILES["slika3"]["name"];
 $tempname = $_FILES["slika3"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename4;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika3 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika3 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename4)){ $filename4 = urlToImg($row['slika3']); } else{ unlink('../'.$row['slika3']); }
@@ -81,7 +81,7 @@ $filename5 = $_FILES["slika4"]["name"];
 $tempname = $_FILES["slika4"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename5;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika4 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika4 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename5)){ $filename5 = urlToImg($row['slika4']); } else{ unlink('../'.$row['slika4']); }
@@ -91,7 +91,7 @@ $filename6 = $_FILES["slika5"]["name"];
 $tempname = $_FILES["slika5"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename6;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika5 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika5 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename6)){ $filename6 = urlToImg($row['slika5']); } else{ unlink('../'.$row['slika5']); }
@@ -101,7 +101,7 @@ $filename7 = $_FILES["slika6"]["name"];
 $tempname = $_FILES["slika6"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename7;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika6 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika6 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename7)){ $filename7 = urlToImg($row['slika6']); } else{ unlink('../'.$row['slika6']); }
@@ -111,7 +111,7 @@ $filename8 = $_FILES["slika7"]["name"];
 $tempname = $_FILES["slika7"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename8;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika7 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika7 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename8)){ $filename8 = urlToImg($row['slika7']); } else{ unlink('../'.$row['slika7']); }
@@ -121,7 +121,7 @@ $filename9 = $_FILES["slika8"]["name"];
 $tempname = $_FILES["slika8"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename9;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika8 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika8 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename9)){ $filename9 = urlToImg($row['slika8']); } else{ unlink('../'.$row['slika8']); }
@@ -131,7 +131,7 @@ $filename10 = $_FILES["slika9"]["name"];
 $tempname = $_FILES["slika9"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename10;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika9 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika9 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename10)){ $filename10 = urlToImg($row['slika9']); } else{ unlink('../'.$row['slika9']); }
@@ -141,7 +141,7 @@ $filename11 = $_FILES["slika10"]["name"];
 $tempname = $_FILES["slika10"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename11;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika10 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika10 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename11)){ $filename11 = urlToImg($row['slika10']); } else{ unlink('../'.$row['slika10']); }
@@ -151,7 +151,7 @@ $filename12 = $_FILES["slika11"]["name"];
 $tempname = $_FILES["slika11"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename12;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika11 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika11 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename12)){ $filename12 = urlToImg($row['slika11']); } else{ unlink('../'.$row['slika11']); }
@@ -161,7 +161,7 @@ $filename13 = $_FILES["slika12"]["name"];
 $tempname = $_FILES["slika12"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename13;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika12 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika12 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename13)){ $filename13 = urlToImg($row['slika12']); } else{ unlink('../'.$row['slika12']); }
@@ -171,7 +171,7 @@ $filename14 = $_FILES["slika13"]["name"];
 $tempname = $_FILES["slika13"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename14;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika13 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika13 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename14)){ $filename14 = urlToImg($row['slika13']); } else{ unlink('../'.$row['slika13']); }
@@ -181,7 +181,7 @@ $filename15 = $_FILES["slika14"]["name"];
 $tempname = $_FILES["slika14"]["tmp_name"];
 $lokacija_slike = $sifrirani_folder . "/" . $filename15;
 move_uploaded_file($tempname, $lokacija_slike);
-$query = "SELECT slika14 FROM nekretnine WHERE sifra='$sifra'";
+$query = "SELECT slika14 FROM objave WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result); 
 if(empty($filename15)){ $filename15 = urlToImg($row['slika14']); } else{ unlink('../'.$row['slika14']); }

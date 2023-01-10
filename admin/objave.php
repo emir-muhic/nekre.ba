@@ -10,7 +10,7 @@ if(!isset($_SESSION['username'])){
 
 if(isset($_GET['del'])){
     $brisanje = $_GET['del'];
-    $query = "DELETE FROM nekretnine WHERE sifra='$brisanje';";
+    $query = "DELETE FROM objave WHERE sifra='$brisanje';";
     $result = mysqli_query($conn, $query);
     header("Location: objave.php");
 }
@@ -119,7 +119,7 @@ if(isset($_GET['del'])){
               </thead>
               <tbody>
                 <?php
-                $query = "SELECT * FROM nekretnine";
+                $query = "SELECT * FROM objave";
                 $result = mysqli_query($conn, $query);
 
                 while($row = mysqli_fetch_assoc($result)){ ?>

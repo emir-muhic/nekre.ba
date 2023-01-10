@@ -145,14 +145,14 @@ $latitude = mysqli_real_escape_string($conn, $latitude);
 $longitude = mysqli_real_escape_string($conn, $longitude);
 $izdvoji_nekretninu = mysqli_real_escape_string($conn, $izdvoji_nekretninu);
 
-$query = "INSERT INTO nekretnine(naslov, opis, cijena, sifra, povrsina, vrsta, kategorija, naselje, grad, godina_izgradnje, latitude, longitude, featured_image, izdvojeno)VALUES('$naslov', '$opis', '$cijena', '$sifra', '$povrsina', '$vrsta', '$kategorija', '$naselje', '$grad', '$godina', '$latitude', '$longitude', '$filename1', '$izdvoji_nekretninu')";
+$query = "INSERT INTO objave(naslov, opis, cijena, sifra, povrsina, vrsta, kategorija, naselje, grad, godina_izgradnje, latitude, longitude, featured_image, izdvojeno)VALUES('$naslov', '$opis', '$cijena', '$sifra', '$povrsina', '$vrsta', '$kategorija', '$naselje', '$grad', '$godina', '$latitude', '$longitude', '$filename1', '$izdvoji_nekretninu')";
 $result = mysqli_query($conn, $query);
 
 $countfiles = count($_FILES['slika']['name']);
 for($i=1;$i<$countfiles;$i++){
     $filename[$i] = $_FILES['slika']['name'][$i];
     move_uploaded_file($_FILES['slika']['tmp_name'][$i], $sifrirani_folder . "/" . $filename[$i]);
-    $query = "UPDATE nekretnine SET slika" . [$i] . " = '$filename[$i]' WHERE sifra = $sifra";
+    $query = "UPDATE objave SET slika" . [$i] . " = '$filename[$i]' WHERE sifra = $sifra";
     $result = mysqli_query($conn, $query);
 }
 
