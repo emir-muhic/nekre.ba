@@ -202,7 +202,7 @@ $latitude = mysqli_real_escape_string($conn, $latitude);
 $longitude = mysqli_real_escape_string($conn, $longitude);
 $izdvoji_nekretninu = mysqli_real_escape_string($conn, $izdvoji_nekretninu);
 
-$query = "UPDATE nekretnine SET naslov = '$naslov', opis = '$opis', cijena = '$cijena', sifra = '$sifra', povrsina = '$povrsina', vrsta = '$vrsta', kategorija = '$kategorija', naselje = '$naselje', grad = '$grad', godina_izgradnje = '$godina', latitude = '$latitude', longitude = '$longitude', featured_image = '$filename1', slika1 = '$filename2', slika2 = '$filename3', slika3 = '$filename4', slika4 = '$filename5', slika5 = '$filename6', slika6 = '$filename7', slika7 = '$filename8', slika8 = '$filename9', slika9 = '$filename10', slika10 = '$filename11', slika11 = '$filename12', slika12 = '$filename13', slika13 = '$filename14', slika14 = '$filename15', izdvojeno = '$izdvoji_nekretninu' WHERE sifra='$sifra'";
+$query = "UPDATE objave SET naslov = '$naslov', opis = '$opis', cijena = '$cijena', sifra = '$sifra', povrsina = '$povrsina', vrsta = '$vrsta', kategorija = '$kategorija', naselje = '$naselje', grad = '$grad', godina_izgradnje = '$godina', latitude = '$latitude', longitude = '$longitude', featured_image = '$filename1', slika1 = '$filename2', slika2 = '$filename3', slika3 = '$filename4', slika4 = '$filename5', slika5 = '$filename6', slika6 = '$filename7', slika7 = '$filename8', slika8 = '$filename9', slika9 = '$filename10', slika10 = '$filename11', slika11 = '$filename12', slika12 = '$filename13', slika13 = '$filename14', slika14 = '$filename15', izdvojeno = '$izdvoji_nekretninu' WHERE sifra='$sifra'";
 $result = mysqli_query($conn, $query);
 
 if(!$result){

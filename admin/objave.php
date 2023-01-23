@@ -153,7 +153,6 @@ if(isset($_GET['del'])){
                     <td><img src="../<?php echo $row['slika13']; ?>" alt=""></td>
                     <td><img src="../<?php echo $row['slika14']; ?>" alt=""></td>
                     <td><?php echo $row['izdvojeno']; ?></td>
-                    <td><?php echo $row['broj_pregleda']; ?></td>
                     <td><a href="uredi.php?edit=<?php echo $row['sifra']; ?>">Uredi</a></td>
                     <td><a href="?del=<?php echo $row['sifra']; ?>">Izbriši</a></td>
                     <td><a href="../nekretnina/?post=<?php echo $row['sifra']; ?>">Pogledaj</a></td>

@@ -2,12 +2,12 @@
 <?php include "php/function.php" ?>
 <?php
 
-$sifra = $_GET['post'];
+    $sifra = $_GET['post'];
 
-$query = "SELECT * FROM objave WHERE sifra='$sifra'";
-$result = mysqli_query($conn, $query);
+    $query = "SELECT * FROM objave WHERE sifra='$sifra'";
+    $result = mysqli_query($conn, $query);
 
-$data = mysqli_fetch_assoc($result);
+    $data = mysqli_fetch_assoc($result);
 
 ?>
 
@@ -560,9 +560,89 @@ $data = mysqli_fetch_assoc($result);
                             </div>
                         </div> -->
 
+                        <!-- <div class="parent-galerija">
+                            <img class="slika-galerija" src="../<?php echo $data['slika1']; ?>" alt="" />
+                            <img class="slika-galerija" src="../<?php echo $data['slika2']; ?>" alt="" />
+                            <img class="slika-galerija" src="../<?php echo $data['slika3']; ?>" alt="" />
+                        </div> -->
+
                         <h4 class="title-2">Lokacija</h4>
                         <div class="property-details-google-map mb-60">
                             <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsmcM4lqzF4d4cPx7lfn9keR_M_P-WTS8&center=<?php echo $data['latitude'].','.$data['longitude']; ?>&q=<?php echo $data['latitude'].','.$data['longitude']; ?>" width="100%" height="100%" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+
+                        <h4 class="title-2">Galerija</h4>
+                        <div class="row">
+                            <?php if($data['slika1'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika1']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika2'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika2']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika3'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika3']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika4'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika4']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika5'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika5']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika6'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika6']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika7'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika7']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika8'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika8']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika9'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika9']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika10'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika10']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika11'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika11']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika12'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika12']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika13'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika13']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
+                            <?php if($data['slika14'] !== "fotografije/$sifra/"){ ?>
+                                <div class="col-lg-6">
+                                    <img src="../<?php echo $data['slika14']; ?>" alt="Image">
+                                </div>
+                            <?php } ?>
                         </div>
 
                         <h4 class="title-2">Slične nekretnine</h4>
@@ -1198,8 +1278,8 @@ $data = mysqli_fetch_assoc($result);
                             <h4 class="footer-title">Administracija</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="#">Prijava</a></li>
-                                    <li><a href="#">Postavi nekretinu</a></li>
+                                    <li><a href="/admin/login.php">Prijava</a></li>
+                                    <li><a href="/admin/login.php">Postavi nekretinu</a></li>
                                     <li><a href="#">Uredi nekretninu</a></li>
                                     <li><a href="#">Pogledaj statistike</a></li>
                                 </ul>

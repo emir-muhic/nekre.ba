@@ -500,8 +500,8 @@ garaža i parking mjesta.</p>
                             <h4 class="footer-title">Administracija</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="#">Prijava</a></li>
-                                    <li><a href="#">Postavi nekretinu</a></li>
+                                    <li><a href="/admin/login.php">Prijava</a></li>
+                                    <li><a href="/admin/login.php">Postavi nekretinu</a></li>
                                     <li><a href="#">Uredi nekretninu</a></li>
                                     <li><a href="#">Pogledaj statistike</a></li>
                                 </ul>
