@@ -213,10 +213,6 @@ if(!isset($_SESSION['username'])){
                     <label for="formFile" class="form-label">Odaberite izdvojenu sliku nekretnine</label>
                     <input class="form-control" type="file" name="fetured_image">
                 </div>
-                <div class="mb-3 mr-5">
-                    <label for="formFileLg" class="form-label">Odaberite sliku #1</label>
-                    <input class="form-control form-control-lg" name="slika[]" type="file" multiple>
-                </div>
                 <div class="form-row">
                     <div class="mb-3 mr-5">
                         <label for="formFileLg" class="form-label">Odaberite sliku #1</label>
